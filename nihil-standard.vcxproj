@@ -23,7 +23,7 @@
     <ClInclude Include="headers\ScreenRatio.hpp" />
     <ClInclude Include="headers\USC.hpp" />
     <ClInclude Include="headers\WidthHeightEnum.hpp" />
-    <ClInclude Include="nihil-standard.hpp" />
+    <ClInclude Include="nstd.hpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
