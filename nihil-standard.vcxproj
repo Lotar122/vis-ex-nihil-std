@@ -20,7 +20,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="headers\Callable.hpp" />
+    <ClInclude Include="headers\ScreenRatio.hpp" />
     <ClInclude Include="headers\USC.hpp" />
+    <ClInclude Include="headers\WidthHeightEnum.hpp" />
     <ClInclude Include="nihil-standard.hpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
