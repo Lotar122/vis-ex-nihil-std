@@ -35,7 +35,7 @@ namespace nihil {
 			* @param ratio - the screen ratio
 			* @param xy - if its the x - Width or y - Height (in means of coordinates)
 			*/
-			static inline float NDC_u(float USC, ScreenRatio ratio, WidthHeightEnum xy)
+			static inline float NDC_u(float USC, ScreenRatio ratio, WidthHeightEnum xyz)
 			{
 				uint8_t denominator;
 				if (ratio.width > ratio.height) {
@@ -44,11 +44,11 @@ namespace nihil {
 				else {
 					denominator = ratio.height;
 				}
-				if (xy == WidthHeightEnum::Width) {
-					return USC / 100 / ratio.width / pow(10, countDigit(denominator));
+				if (xyz == WidthHeightEnum::Width || xyz == WidthHeightEnum::Depth) {
+					return USC / 100 / (ratio.width / pow(10, countDigit(denominator) - 1));
 				}
-				if (xy == WidthHeightEnum::Height) {
-					return USC / 100 / ratio.height / pow(10, countDigit(denominator));
+				if (xyz == WidthHeightEnum::Height) {
+					return USC / 100 / (ratio.height / pow(10, countDigit(denominator) - 1));
 				}
 			}
 			/*
@@ -58,7 +58,7 @@ namespace nihil {
 			* @param ratio - the screen ratio
 			* @param xy - if its the x - Width or y - Height (in means of coordinates)
 			*/
-			static inline float USC_u(float NDC, ScreenRatio ratio, WidthHeightEnum xy)
+			static inline float USC_u(float NDC, ScreenRatio ratio, WidthHeightEnum xyz)
 			{
 				uint8_t denominator;
 				if (ratio.width > ratio.height) {
@@ -67,11 +67,11 @@ namespace nihil {
 				else {
 					denominator = ratio.height;
 				}
-				if (xy == WidthHeightEnum::Width) {
-					return NDC * 100 * ratio.width * pow(10, countDigit(denominator) - 1);
+				if (xyz == WidthHeightEnum::Width || xyz == WidthHeightEnum::Depth) {
+					return NDC * 100 * (ratio.width * pow(10, countDigit(denominator) - 1));
 				}
-				if (xy == WidthHeightEnum::Height) {
-					return NDC * 100 * ratio.height * pow(10, countDigit(denominator) - 1);
+				if (xyz == WidthHeightEnum::Height) {
+					return NDC * 100 * (ratio.height * pow(10, countDigit(denominator) - 1));
 				}
 			}
 		};
