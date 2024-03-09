@@ -20,10 +20,19 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="headers\Callable.hpp" />
+    <ClInclude Include="headers\ComponentSystem.hpp" />
+    <ClInclude Include="headers\FS.hpp" />
+    <ClInclude Include="headers\OBJLoader.hpp" />
     <ClInclude Include="headers\ScreenRatio.hpp" />
+    <ClInclude Include="headers\SpliString.hpp" />
     <ClInclude Include="headers\USC.hpp" />
     <ClInclude Include="headers\WidthHeightEnum.hpp" />
     <ClInclude Include="nstd.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="sources\FS.cpp" />
+    <ClCompile Include="sources\SplitString.cpp" />
+    <ClCompile Include="sources\FS.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
@@ -31,6 +40,7 @@
     <ProjectGuid>{7f176106-95e5-4da5-8960-3f0d10707cdb}</ProjectGuid>
     <RootNamespace>nihilstandard</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>nstd</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -117,8 +127,10 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>
@@ -134,8 +146,10 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>
