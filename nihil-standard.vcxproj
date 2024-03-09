@@ -22,6 +22,7 @@
     <ClInclude Include="headers\Callable.hpp" />
     <ClInclude Include="headers\ComponentSystem.hpp" />
     <ClInclude Include="headers\FS.hpp" />
+    <ClInclude Include="headers\GenerateChecksum.hpp" />
     <ClInclude Include="headers\OBJLoader.hpp" />
     <ClInclude Include="headers\ScreenRatio.hpp" />
     <ClInclude Include="headers\SpliString.hpp" />
@@ -31,6 +32,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="sources\FS.cpp" />
+    <ClCompile Include="sources\GenerateChecksum.cpp" />
     <ClCompile Include="sources\SplitString.cpp" />
     <ClCompile Include="sources\FS.cpp" />
   </ItemGroup>
