@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -22,19 +22,28 @@
     <ClInclude Include="headers\Callable.hpp" />
     <ClInclude Include="headers\ComponentSystem.hpp" />
     <ClInclude Include="headers\FS.hpp" />
-    <ClInclude Include="headers\GenerateChecksum.hpp" />
+    <ClInclude Include="headers\Checksum.hpp" />
+    <ClInclude Include="headers\LoadDll.hpp" />
+    <ClInclude Include="headers\LOD.hpp" />
     <ClInclude Include="headers\OBJLoader.hpp" />
+    <ClInclude Include="headers\PtrManager.hpp" />
     <ClInclude Include="headers\ScreenRatio.hpp" />
     <ClInclude Include="headers\SpliString.hpp" />
     <ClInclude Include="headers\USC.hpp" />
+    <ClInclude Include="headers\utils.hpp" />
     <ClInclude Include="headers\WidthHeightEnum.hpp" />
+    <ClInclude Include="headers\_voidp.hpp" />
     <ClInclude Include="nstd.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="sources\FS.cpp" />
-    <ClCompile Include="sources\GenerateChecksum.cpp" />
+    <ClCompile Include="sources\Checksum.cpp" />
+    <ClCompile Include="sources\OBJLoader.cpp" />
     <ClCompile Include="sources\SplitString.cpp" />
-    <ClCompile Include="sources\FS.cpp" />
+    <ClCompile Include="sources\utils.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="sources\utils.tpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
@@ -89,6 +98,12 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ExternalIncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(ProjectDir)\thirdparty;</ExternalIncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ExternalIncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(ProjectDir)\thirdparty;</ExternalIncludePath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
