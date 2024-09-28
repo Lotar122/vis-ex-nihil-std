@@ -893,6 +893,11 @@ namespace nihil {
                 }
             }
 
+            void loadObjFile()
+            {
+
+            }
+
             void Load(std::string path, LoadBinObj whatToLoad, ScreenRatio screenRatio)
             {
                 if (whatToLoad == LoadBinObj::Obj)
